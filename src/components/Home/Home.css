@@ -1,0 +1,42 @@
+.homeContainer {
+  width: 100%;
+}
+
+.questionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-top: 2rem;
+}
+.questionContainer::-webkit-scrollbar {
+  width: 5px;
+}
+/* Track */
+.questionContainer::-webkit-scrollbar-track {
+  background: #bbb;
+}
+/* Handle */
+.questionContainer::-webkit-scrollbar-thumb {
+  background: #888;
+}
+.questionContainer::-webkit-scrollbar-thumb:window-inactive {
+  background: #888;
+}
+
+.questionCard {
+  width: 100%;
+}
+.questionTypeContainer {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* @media only screen and (max-width: 768px) {
+    .questionCard {
+        width: 100%;
+    }
+  } */

@@ -1,0 +1,21 @@
+.card {
+    width: 80%;
+    max-width: 768px;
+    overflow: visible !important;
+    padding: 1rem;
+    margin: 1rem auto;
+}
+.profileContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.profileImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+.profileText {
+    min-width: 6rem;
+}

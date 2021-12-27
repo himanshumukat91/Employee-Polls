@@ -1,0 +1,12 @@
+.noMatchContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.noMatchText {
+    margin-bottom: 3rem;
+}
