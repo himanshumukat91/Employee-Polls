@@ -1,0 +1,26 @@
+.menuIcon {
+    margin-right: 0.5rem;
+    color: inherit;
+}
+.menuLogout {
+    margin-left: 1rem !important;
+}
+.menuIconAdd {
+    margin-left: auto;
+}
+.menuIconHome {
+    display: flex;
+    color: inherit;
+    align-items: center;
+}
+.menuUserProfile {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+    .hide {
+        display: none
+    }
+  }
