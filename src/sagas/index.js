@@ -19,13 +19,11 @@ function* saveAnswer(action) {
     const result = action.result;
     yield call(_saveQuestionAnswer, result);    
     yield put({ type: "SAVE_ANSWER_SUCCESS", result });   
-    yield put({ type: "POST_ANSWER_SUCCESS", result });
 }
 
 function* saveQuestion(action) {
     const result = yield call(_saveQuestion, action.result);    
     yield put({ type: "SAVE_QUESTION_SUCCESS", result});   
-    yield put({ type: "POST_QUESTION_SUCCESS", result});
 }
 
 function* actionWatcher() {

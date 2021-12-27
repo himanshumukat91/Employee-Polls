@@ -63,7 +63,7 @@ class Home extends PureComponent {
             ))
           ) : (
             <Typography variant="h6" color="textSecondary">
-              No New Question Available
+              No New Polls Available
             </Typography>
           )}
         </div>

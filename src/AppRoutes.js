@@ -6,8 +6,8 @@ import Login from './components/Login/Login';
 import QuestionDetails from './components/QuestionDetails/QuestionDetails';
 import NoMatch from './components/NoMatch/NoMatch';
 import Menubar from './components/Menubar/Menubar';
-// import Leaderboard from './components/Leaderboard/Leaderboard';
-// import AddQuestion from './components/AddQuestion/AddQuestion';
+import Leaderboard from './components/Leaderboard/Leaderboard';
+import AddQuestion from './components/AddQuestion/AddQuestion';
 
 function AppRoutes(props) {
   return (
@@ -20,11 +20,9 @@ function AppRoutes(props) {
             :<Routes>        
                 <Route path='/' element={<Home />} />
                 <Route path='/login' element={<Login />} /> 
-                {/* <Route path='/add' element={<AddQuestion />} />  */}
-                {/* <Route path='/leaderboard' element={<Leaderboard />} />  */}
-                {/* <Route path='questions' element={<Home />}> */}
-                    <Route path='/questions/:questionId' element={<QuestionDetails />} />
-                {/* </Route>   */}
+                <Route path='/add' element={<AddQuestion />} /> 
+                <Route path='/leaderboard' element={<Leaderboard />} /> 
+                <Route path='/questions/:questionId' element={<QuestionDetails />} />
                 <Route path='*' element={<NoMatch />} />)
             </Routes>}
         </BrowserRouter>

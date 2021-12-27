@@ -1,0 +1,13 @@
+.leaderCard {
+    width: 80%;
+    max-width: 768px;
+    overflow: visible !important;
+    padding: 1rem;
+    margin: 1rem auto;
+}
+.leaderContent {
+    display: flex;
+}
+.leaderDetails {
+    margin-left: 2rem;
+}
