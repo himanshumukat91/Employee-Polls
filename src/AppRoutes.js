@@ -10,9 +10,8 @@ import Leaderboard from './components/Leaderboard/Leaderboard';
 import AddQuestion from './components/AddQuestion/AddQuestion';
 
 function AppRoutes(props) {
-  return (
-        <BrowserRouter>   
-            <Menubar />  
+  return (<> 
+            <Menubar userDetails={props.userDetails} />  
             {!props.currentUser     
             ?<Routes>        
                 <Route path='/*' element={<Login />}/> 
@@ -25,10 +24,8 @@ function AppRoutes(props) {
                 <Route path='/questions/:questionId' element={<QuestionDetails />} />
                 <Route path='*' element={<NoMatch />} />)
             </Routes>}
-        </BrowserRouter>
+        </>
     );
 }
-
-AppRoutes.propTypes = {currentUser: PropTypes.string};
 
 export default AppRoutes;

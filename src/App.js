@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux';
-// import { BrowserRouter as Router } from 'react-router-dom';
 
 import AppRoutes from './AppRoutes'
 import { getUsers } from './actions/users';
@@ -14,15 +13,9 @@ class App extends Component {
   }
 
   render() {
-    const {currentUser} = this.props;
+    const {currentUser, userDetails} = this.props;
     return (
-      // <Router>
-        // <Fragment>
-          // <div>
-            <AppRoutes currentUser={currentUser}/>
-          // </div>
-        // </Fragment>
-      // </Router>
+      <AppRoutes currentUser={currentUser} userDetails={userDetails}/>
     );
   }
 }
@@ -30,6 +23,7 @@ class App extends Component {
 export default connect(
   (state) => ({
       currentUser: state.user.currentUser,
+      userDetails: state.user?.currentUser ? state.user?.users[state.user?.currentUser] : {},
   }),
   {
     getUsers,

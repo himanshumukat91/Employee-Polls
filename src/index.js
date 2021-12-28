@@ -21,9 +21,9 @@ sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
-    {/* <BrowserRouter> */}
+    <BrowserRouter>
       <App />
-    {/* </BrowserRouter> */}
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );

@@ -77,9 +77,7 @@ function Menubar (props) {
 }
 
 export default connect(
-    (state) => ({
-        userDetails: state.user?.currentUser ? state.user?.users[state.user?.currentUser] : {},
-    }),
+    (state) => ({}),
     {
         setCurrentUser,
     },
