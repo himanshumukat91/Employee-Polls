@@ -19,7 +19,7 @@ function AppRoutes(props) {
             :<Routes>        
                 <Route path='/' element={<Home />} />
                 <Route path='/login' element={<Login />} /> 
-                <Route path='/add' element={<AddQuestion />} /> 
+                <Route path='/add' element={<AddQuestion userDetails={props.userDetails}/>} /> 
                 <Route path='/leaderboard' element={<Leaderboard />} /> 
                 <Route path='/questions/:questionId' element={<QuestionDetails />} />
                 <Route path='*' element={<NoMatch />} />)

@@ -10,12 +10,13 @@
 
 .loginHeading {
     text-align: center;
+    margin-bottom: 2rem !important;
 }
 
 .loginInput {
-    width: '25ch';
-    height: '2ch';
-    margin: '1ch';
+    width: 25rem;
+    height: 4rem;
+    margin: 2rem;
 }
 
 .loginButton {

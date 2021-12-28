@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import "../../App.css";
 import "./Login.css";
 
 import { setCurrentUser } from "../../actions/users";
@@ -13,48 +14,60 @@ class Login extends PureComponent {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      showError: false,
     };
   }
 
   handleChangeUsername = (event) => {
-      this.setState({username: event?.target?.value || ""})
-  }
+    this.setState({ username: event?.target?.value || "" });
+  };
 
   handleChangePassword = (event) => {
-      this.setState({password: event?.target?.value || ""})
-  }
+    this.setState({ password: event?.target?.value || "" });
+  };
 
   login = () => {
-    // const { history, location } = this.props;
-    const {username, password} = this.state;
+    const { username, password } = this.state;
     if (username && password && this.matchPassword(username, password)) {
       this.props.setCurrentUser(username);
-    //   history.push(location.pathname);
+      this.setState({ showError: false });
+    } else {
+      this.setState({ showError: true });
     }
   };
 
   matchPassword = (username, password) => {
-      const {users} = this.props;
-      const userDetails = Object.values(users);
-      return userDetails.filter(u => ((u.name === username || u.id === username) && u.password === password)).length;
-  }
+    const { users } = this.props;
+    const userDetails = Object.values(users);
+    return userDetails.filter(
+      (u) =>
+        (u.name === username || u.id === username) && u.password === password
+    ).length;
+  };
 
   render() {
-    const {username, password} = this.state;
+    const { username, password, showError } = this.state;
 
     return (
       <div className="loginContainer">
         <Typography variant="h5" className="loginHeading">
-          TELL US WHO YOU ARE
+          PLEASE LOGIN TO CONTINUE
         </Typography>
-        <TextField className={'loginInput'}
-            id="outlined-basic" label="Username or Id" variant="filled"
+        <TextField
+          className={"loginInput"}
+          id="outlined-basic"
+          label="Username or Id"
+          variant="filled"
           value={username}
           onChange={this.handleChangeUsername}
         />
-        <TextField className={'loginInput'}
-            id="outlined-basic" label="Password" variant="filled"
+        <TextField
+          className={"loginInput"}
+          id="outlined-basic"
+          label="Password"
+          variant="filled"
+          type="password"
           value={password}
           onChange={this.handleChangePassword}
         />
@@ -66,6 +79,9 @@ class Login extends PureComponent {
         >
           Login
         </Button>
+        {showError && <Typography id="error-message" variant="subtitle1" className="errorText">
+          Username and Password do not match. Please try again
+        </Typography>}
       </div>
     );
   }
