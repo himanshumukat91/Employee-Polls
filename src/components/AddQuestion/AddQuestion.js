@@ -104,7 +104,7 @@ function AddQuestion(props) {
             Option 1 and Option 2 should be non-empty string and should not be
             the same
           </Typography>
-        ) }
+        )}
       </CardActions>
     </Card>
   );

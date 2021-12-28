@@ -79,9 +79,15 @@ class Login extends PureComponent {
         >
           Login
         </Button>
-        {showError && <Typography id="error-message" variant="subtitle1" className="errorText">
-          Username and Password do not match. Please try again
-        </Typography>}
+        {showError && (
+          <Typography
+            id="error-message"
+            variant="subtitle1"
+            className="errorText"
+          >
+            Username and Password do not match. Please try again
+          </Typography>
+        )}
       </div>
     );
   }

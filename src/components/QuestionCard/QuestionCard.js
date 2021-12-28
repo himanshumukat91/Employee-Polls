@@ -12,7 +12,8 @@ import Typography from "@mui/material/Typography";
 import "./QuestionCard.css";
 
 function QuestionCard(props) {
-  const { questionDetails, currentUser, postAnswer, detailedView, users } = props;
+  const { questionDetails, currentUser, postAnswer, detailedView, users } =
+    props;
   const authorDetails = users[questionDetails.author];
   const currUserDetails = users[currentUser];
 
@@ -35,48 +36,52 @@ function QuestionCard(props) {
   return (
     <Card key={questionDetails.id} className="card">
       <CardContent>
-          <div className="profileContainer">
-            <img
-              src={authorDetails.avatarURL}
-              alt={authorDetails.name}
-              className="profileImage"
-            />
-            <Typography
-              variant="subtitle1"
-              color="textSecondary"
-              className="profileText"
-            >
-              {authorDetails.name}
-            </Typography>
-          </div>
+        <div className="profileContainer">
+          <img
+            src={authorDetails.avatarURL}
+            alt={authorDetails.name}
+            className="profileImage"
+          />
+          <Typography
+            variant="subtitle1"
+            color="textSecondary"
+            className="profileText"
+          >
+            {authorDetails.name}
+          </Typography>
+        </div>
         <Typography color="textSecondary">Would you rather</Typography>
       </CardContent>
       <CardActions>
-      {detailedView ? 
-        (<FormControl component="fieldset">
-          <RadioGroup
-            aria-label="options"
-            name="options"
-            value={selectedOption}
-            onChange={handleChange}
-          >
-            <FormControlLabel
-              value={"optionOne"}
-              control={<Radio />}
-              label={`${questionDetails.optionOne.text} ${
-                selectedOption ? option1String : ""
-              }`}
-            />
-            <FormControlLabel
-              value={"optionTwo"}
-              control={<Radio />}
-              label={`${questionDetails.optionTwo.text} ${
-                selectedOption ? option2String : ""
-              }`}
-            />
-          </RadioGroup>
-        </FormControl>)
-        :<Typography color="textSecondary">&nbsp;&nbsp;{`${questionDetails.optionOne.text} (or) ...`}</Typography>}
+        {detailedView ? (
+          <FormControl component="fieldset">
+            <RadioGroup
+              aria-label="options"
+              name="options"
+              value={selectedOption}
+              onChange={handleChange}
+            >
+              <FormControlLabel
+                value={"optionOne"}
+                control={<Radio />}
+                label={`${questionDetails.optionOne.text} ${
+                  selectedOption ? option1String : ""
+                }`}
+              />
+              <FormControlLabel
+                value={"optionTwo"}
+                control={<Radio />}
+                label={`${questionDetails.optionTwo.text} ${
+                  selectedOption ? option2String : ""
+                }`}
+              />
+            </RadioGroup>
+          </FormControl>
+        ) : (
+          <Typography color="textSecondary">
+            &nbsp;&nbsp;{`${questionDetails.optionOne.text} (or) ...`}
+          </Typography>
+        )}
       </CardActions>
     </Card>
   );

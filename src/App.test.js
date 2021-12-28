@@ -55,8 +55,8 @@ describe("Testing _saveQuestion()", () => {
       optionTwoText: "Option 2",
       author: "sarahedo"
     };
-    const formatted = await _saveQuestion(questionInputData);
-    expect(formatted).toEqual(
+    const questionData = await _saveQuestion(questionInputData);
+    expect(questionData).toEqual(
       expect.objectContaining({
         id: expect.any(String),
         timestamp: expect.any(Number),
