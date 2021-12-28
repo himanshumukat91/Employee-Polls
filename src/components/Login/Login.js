@@ -56,7 +56,7 @@ class Login extends PureComponent {
         </Typography>
         <TextField
           className={"loginInput"}
-          id="outlined-basic"
+          id="username"
           label="Username or Id"
           variant="filled"
           value={username}
@@ -64,7 +64,7 @@ class Login extends PureComponent {
         />
         <TextField
           className={"loginInput"}
-          id="outlined-basic"
+          id="password"
           label="Password"
           variant="filled"
           type="password"

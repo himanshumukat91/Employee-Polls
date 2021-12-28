@@ -1,6 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types"; 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import QuestionDetails from './components/QuestionDetails/QuestionDetails';
